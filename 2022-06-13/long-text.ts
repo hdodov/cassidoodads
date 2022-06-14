@@ -9,7 +9,7 @@
 function longText(text: string, n: number): string {
 	return text
 		.split("")
-		.map((c) => ("aeiou".indexOf(c) < 0 ? c : new Array(n).fill(c).join("")))
+		.map((c) => ("aeiou".indexOf(c) < 0 ? c : c.repeat(n)))
 		.join("");
 }
 
