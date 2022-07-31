@@ -13,7 +13,7 @@ class Node {
 	constructor(public name: string, public next: Node | null) {}
 }
 
-function findListIntersection(a: Node, b: Node) {
+function search(a: Node, b: Node) {
 	let node = a.next;
 
 	while (node && node !== b && node !== b.next) {
@@ -21,6 +21,10 @@ function findListIntersection(a: Node, b: Node) {
 	}
 
 	return node;
+}
+
+function findListIntersection(a: Node, b: Node) {
+	return search(a, b) || search(b, a);
 }
 
 const n5 = new Node("n5", null);
